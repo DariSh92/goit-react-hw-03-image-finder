@@ -1,27 +1,14 @@
-html {
-  box-sizing: border-box;
-  width: 100vw;
-  overflow-x: hidden;
-}
+import styled from '@emotion/styled';
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-  color: #212121;
-  background-color: #fff;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
+export const Container = styled.main`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+  padding-bottom: 24px;
+`;
+export const ErrorMessage = styled.p`
+  color: #b97575 ;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+`;

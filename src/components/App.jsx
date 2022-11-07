@@ -4,7 +4,7 @@ import { ImageGallery } from 'components/ImageGallery/ImageGallery';
 import { Loader } from 'components/Loader/Loader';
 import { Button } from 'components/Button/Button';
 import * as API from 'services/Api';
-
+import { Container, ErrorMessage } from 'components/App.styled';
 
 
 export class App extends Component {
@@ -56,14 +56,15 @@ export class App extends Component {
 
   render() {
     return (
-      <>
+      <Container>
         <SearchbarForm onSubmit={ this.handleSubmit } />
         <ImageGallery items={this.state.pictures} />
         { this.state.isLoading && <Loader /> }
         { this.state.pictures.length < this.state.total && (
           <Button onLoadMore={ this.handleLoadMore } />
-        ) }
-      </>
+        )}
+        { this.state.pictures.length === 0 && (<ErrorMessage>Nothing found =(</ErrorMessage>)}
+      </Container>
     );
 }
 
